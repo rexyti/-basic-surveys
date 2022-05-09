@@ -89,7 +89,7 @@ public class SurveyServiceImpl implements SurveyService {
         Optional<Set<CreateSurveyQuestionOptionDto>> optional =Optional.ofNullable(createSurveyQuestionDto.getOptions());
         if(optional.isPresent()){
             Set<CreateSurveyQuestionOptionDto>options = Optional.ofNullable(createSurveyQuestionDto.getOptions()).get();
-            return createSurveyQuestionDto.getOptions().stream()
+            return options.stream()
                    .map(q->createSurveyQuestionOption(q,surveyQuestion))
                    .collect(Collectors.toSet());
         }else{
