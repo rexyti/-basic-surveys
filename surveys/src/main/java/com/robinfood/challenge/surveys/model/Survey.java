@@ -22,7 +22,7 @@ public class Survey {
     @Column(nullable = false)
     private String tittle;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "survey_id")
     private Set<SurveyQuestion> questions;
 }

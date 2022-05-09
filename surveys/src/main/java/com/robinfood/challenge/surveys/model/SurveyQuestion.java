@@ -10,7 +10,6 @@ import javax.persistence.*;
 import java.util.Set;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -30,7 +29,7 @@ public class SurveyQuestion {
     @Enumerated(EnumType.STRING)
     private QuestionType type;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "survey_question_id")
     private Set<SurveyQuestionOption> options;
 }

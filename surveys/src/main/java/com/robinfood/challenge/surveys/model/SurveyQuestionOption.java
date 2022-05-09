@@ -8,7 +8,6 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -23,6 +22,6 @@ public class SurveyQuestionOption {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name="survey_id", nullable=false)
+    @JoinColumn(name="survey_question_id", nullable=false)
     private SurveyQuestion question;
 }

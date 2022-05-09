@@ -1,12 +1,19 @@
 spring:
   datasource:
-    url: jdbc:h2:file:~/testdb;AUTO_SERVER=true
+    url: jdbc:h2:file:~/surveydb;AUTO_SERVER=true
     username: root
     password: root
     driver-class-name: org.h2.Driver
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate.ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
+server:
+  port : 5000
